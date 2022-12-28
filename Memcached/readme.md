@@ -11,6 +11,9 @@ systemctl status memcached
 ## Connect to the memcached using telnet:
 telnet localhost 11211
 
+## Disconnect from telnet connection:
+quit
+
 ## Show the status of memcached
 stats
 
