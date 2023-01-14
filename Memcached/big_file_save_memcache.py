@@ -1,6 +1,6 @@
 #!/usr/bin/env python3
 
-from pymemcache.client base
+from pymemcache.client import base
 import pickle
 import math
 
@@ -15,21 +15,21 @@ def setFile(name, path):
   size = len(fileId.read())
   fileId.seek(0)
   loopCount = int(getLoopCount(size))
-  client.set(name, loopcount)
+  client.set(name, loopCount)
   
   for i in range (loopCount):
-    data = fileId.read(int(chunk_size))
+    data = pickle.dumps( fileId.read(int(chunk_size)) )
     client.set("%s%s%s" % (name, "_", str(i)), data)
   
   fileId.close()
     
 def getFile(name):
   loopCount = int(client.get(name))
-  fileData = ''
+  fileData = b''
   
   for i in range(loopCount):
     data = client.get("%s%s%s" % (name, "_", str(i)))
-    fileData = fileData + data
+    fileData = fileData + pickle.loads( data )
   
   return fileData
 
@@ -42,6 +42,10 @@ def main():
   
   fileContent = getFile(fileName)
   print(fileContent)
+  
+  fileDes = open(path + 'test' , 'wb')
+  fileDes.write(fileContent)
+  fileDes.close()
   
 if __name__ == '__main__':
   main()
