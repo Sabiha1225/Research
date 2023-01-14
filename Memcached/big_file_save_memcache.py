@@ -20,6 +20,8 @@ def setFile(name, path):
   for i in range (loopCount):
     data = fileId.read(int(chunk_size))
     client.set("%s%s%s" % (name, "_", str(i)), data)
+  
+  fileId.close()
     
 def getFile(name):
   loopCount = int(client.get(name))
@@ -30,3 +32,16 @@ def getFile(name):
     fileData = fileData + data
   
   return fileData
+
+
+def main():
+  fileName = 'decoder.layer_norm.bias'
+  path = './decoder.layer_norm.bias'
+  
+  setFile(fileName, path)
+  
+  fileContent = getFile(fileName)
+  print(fileContent)
+  
+if __name__ == '__main__':
+  main()
