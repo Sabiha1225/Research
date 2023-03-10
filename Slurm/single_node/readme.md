@@ -1,3 +1,4 @@
+## Installation Process
 Setup Slurm on Ubuntu for single node
 
 - sudo apt update -y
@@ -18,3 +19,15 @@ Strat the services
 
 - sudo systemctl start slurmctld
 - sudo systemctl start slurmd
+
+## Commands
+- slurmd -c
+- squeue
+- sinfo
+- /var/log/slurm/slurmctld.log
+- delete the clustername file
+- /var/lib/slurm/slurmctld/clustername
+
+- Give loads 
+- srun -n8 -l hostname
+- srun -n8 -l pwd
