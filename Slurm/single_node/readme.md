@@ -31,3 +31,6 @@ Strat the services
 - Give loads 
 - srun -n8 -l hostname
 - srun -n8 -l pwd
+
+Run a Script:
+sbatch script1.sh
