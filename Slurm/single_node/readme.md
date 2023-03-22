@@ -34,3 +34,6 @@ Strat the services
 
 Run a Script:
 sbatch script1.sh
+
+See the details for a particular job
+scontrol show job «jobid»
