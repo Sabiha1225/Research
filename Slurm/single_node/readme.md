@@ -32,8 +32,8 @@ Strat the services
 - srun -n8 -l hostname
 - srun -n8 -l pwd
 
-Run a Script:
+######Run a Script:
 sbatch script1.sh
 
-See the details for a particular job
+######See the details for a particular job
 scontrol show job «jobid»
