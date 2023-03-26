@@ -37,3 +37,6 @@ sbatch script1.sh
 
 ###### See the details for a particular job
 scontrol show job «jobid»
+
+#### Node Status
+scontrol show node
