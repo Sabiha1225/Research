@@ -40,3 +40,8 @@ scontrol show job «jobid»
 
 #### Node Status
 scontrol show node
+
+#### For a drained node
+scontrol update NodeName=nodename State=RESUME
+
+see slurmd log file
